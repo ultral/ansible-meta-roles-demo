@@ -1,0 +1,6 @@
+---
+- name: OC is installed
+  include_role:
+    name: download_and_unzip
+  vars:
+    src_url: "{{ openshift_source }}"

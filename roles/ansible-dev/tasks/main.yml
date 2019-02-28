@@ -1,0 +1,16 @@
+---
+- name: ansible dev software are installed
+  yum:
+    name: "{{ansible_dev_software}}"
+    state: present
+
+- name: upgrade setuptools pip module
+  pip:
+    name: setuptools
+    state: latest
+
+- name: install pip modules
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ ansible_pip_modules }}"

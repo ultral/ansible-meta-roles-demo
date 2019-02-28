@@ -1,0 +1,16 @@
+---
+ansible_dev_software:
+  - ansible
+  - ansible-lint
+  - python
+  - python-pip
+  - gcc
+  - python-devel
+  - openssl-devel
+  - libselinux-python
+
+ansible_pip_modules:
+  - molecule
+  - docker
+  - openshift
+  - ansible-container

@@ -1,0 +1,27 @@
+---
+
+- name: Docker required software are installed
+  yum:
+    name: "{{ docker_needed_software }}"
+    state: present
+    update_cache: true
+
+- name: Docker repository is presented
+  get_url:
+    url: "{{ docker_repo }}"
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: 0644
+    force: false
+    owner: root
+    group: root
+
+- name: docker is installed
+  yum:
+    name: "{{ docker_software }}"
+    state: present
+
+- name: enable docker
+  service:
+    name: docker
+    enabled: true
+    state: "{{ docker_service_state }}"

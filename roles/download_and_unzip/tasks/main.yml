@@ -1,0 +1,18 @@
+---
+- assert:
+    that:
+      - src_url != ""
+      - dst_path != ""
+    msg: "Parameters are not set"
+
+- name: unzip is installed
+  yum:
+    name: unzip
+    state: present
+
+- name: Unarchive terraform
+  unarchive:
+    src: "{{ src_url }}"
+    dest: "{{ dst_path }}"
+    mode: 0755
+    remote_src: true

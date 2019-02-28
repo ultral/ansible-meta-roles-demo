@@ -1,0 +1,16 @@
+---
+
+docker_repo: https://download.docker.com/linux/centos/docker-ce.repo
+
+docker_needed_software:
+  - device-mapper-persistent-data
+  - lvm2
+  - bridge-utils
+
+docker_software:
+  - docker-ce
+  - docker-python
+  - python-docker-py
+  - python-docker-pycreds
+
+docker_service_state: stopped

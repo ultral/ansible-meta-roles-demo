@@ -1,0 +1,10 @@
+*.retry
+*.box
+.vagrant
+.terraform/
+.terraform.tfstate.lock
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.key.json

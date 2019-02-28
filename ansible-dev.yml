@@ -1,0 +1,7 @@
+---
+
+- name: isntall ansible dev vm
+  hosts: all
+  become: true
+  roles:
+    - role: ansible-dev
